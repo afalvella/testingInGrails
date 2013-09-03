@@ -9,20 +9,11 @@ import org.junit.*
 /**
  * See the API for {@link grails.test.mixin.support.GrailsUnitTestMixin} for usage instructions
  */
-@TestMixin(GrailsUnitTestMixin)
+@TestFor(MyService)
 class FirstTests {
-
-	MyService myService
 	
-    void setUp() {
-        // Setup logic here
-    }
-
-    void tearDown() {
-        // Tear down logic here
-    }
-
-    void testSomething() {
-        assert true 
+    void testInvokingAServiceWithoutDeclaringIt() {
+		//The testFor annotation give me a reference to the service called "service"
+        assertEquals('123', service.numberToString(123)) 
     }
 }

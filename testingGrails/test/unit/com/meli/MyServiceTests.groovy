@@ -7,20 +7,24 @@ import org.junit.*
 /**
  * See the API for {@link grails.test.mixin.services.ServiceUnitTestMixin} for usage instructions
  */
-@TestMixin(GrailsUnitTestMixin)
+@TestFor(MyService)
 class MyServiceTests {
 
-	MyService myService
-	
-    void setUp() {
-        myService = new MyService()
+	void setUp() {
+		//The testFor annotation give me a reference to the service called "service" so it's not necessary to instantiate it.
+		//myService = new MyService()
     }
 	
     void testNumberToString_whenZero_shouldReturnTheCorrectValue() {
-        assert myService.numberToString(0) == '0' 
+        assert service.numberToString(0) == '0' 
     }
 	
 	void testNumberToString_whenNull_shouldReturnNull(){
-		assertEquals(null,myService.numberToString(null))
+		assertEquals(null, service.numberToString(null))
+	}
+	
+	void testDoComplexTask_whenMockingCollaborator_shouldReturnWhatIMock() {
+		def control = mockFor(CollaboratorService)
+		//control.demand.doYourMagic(1..1) { String 
 	}
 }
