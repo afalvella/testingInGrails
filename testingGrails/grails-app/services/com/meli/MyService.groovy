@@ -11,4 +11,8 @@ class MyService {
 	def doComplexTask() {
 		collaborator.doYourMagic()
 	}
+	
+	def getJohnSmith() {
+		return Person.findByFirstNameAndLastName("John", "Smith")
+	}
 }

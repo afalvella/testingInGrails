@@ -1,16 +1,14 @@
 package com.meli
 
 import static org.junit.Assert.*
-
 import grails.test.GrailsMock
 import grails.test.mixin.*
 import grails.test.mixin.support.*
 import org.junit.*
+import static grails.test.MockUtils.*
 
-/**
- * See the API for {@link grails.test.mixin.support.GrailsUnitTestMixin} for usage instructions
- */
 @TestFor(MyService)
+@Mock(Person)
 class FirstTests {
 	
     void testInvokingAServiceWithoutDeclaringIt() {
@@ -32,10 +30,14 @@ class FirstTests {
 		List listToSort = ['b','c','a']
 		Collections.sort(listToSort)
 		assertEquals listResult, listToSort			
+	}
+	
+	void testGetJohnSmith_whenCallTheServiceAndMockTheDomain_shouldReturnAPersonJohnSmith() {
+		Person rambo = new Person(firstName:'John', lastName:'Rambo')
+		Person smith = new Person(firstName:'John', lastName:'Smith')
 		
-//		def mockControl = mockFor(Collections)
-//		mockControl.demand.static.sort(1..1) { -> return ['a','c','b'] }
-//		def mockInstance = mockControl.createMock()
-//		assert mockInstance.sort(listToSort) == listToSort		
+		mockDomain(Person,[rambo, smith])
+		
+		assertEquals smith, service.getJohnSmith()
 	}
 }
