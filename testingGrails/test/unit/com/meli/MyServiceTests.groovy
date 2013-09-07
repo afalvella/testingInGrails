@@ -24,7 +24,19 @@ class MyServiceTests {
 	}
 	
 	void testDoComplexTask_whenMockingCollaborator_shouldReturnWhatIMock() {
+		String mockMsg = 'Im a mock collaborator'
+		
+		//Get a mock 'template' 
 		def control = mockFor(CollaboratorService)
-		//control.demand.doYourMagic(1..1) { String 
+		//Set its behavior
+		control.demand.doYourMagic(1..1) { -> return mockMsg }
+		//Set the instance in the class under test
+		service.collaborator = control.createMock()
+		
+		//Now I can test the class
+		assertEquals(mockMsg, service.doComplexTask())
+		
+		//I can verify the call to the collaborator
+		control.verify()	 
 	}
 }
