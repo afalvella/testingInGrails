@@ -13,6 +13,6 @@ class MyService {
 	}
 	
 	def getJohnSmith() {
-		return Person.findByFirstNameAndLastName("John", "Smith")
+		Person.findByFirstNameAndLastName("John", "Smith")
 	}
 }

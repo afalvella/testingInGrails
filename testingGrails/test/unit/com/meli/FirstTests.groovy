@@ -2,9 +2,7 @@ package com.meli
 
 import static org.junit.Assert.*
 import grails.test.GrailsMock
-import grails.test.mixin.*
 import grails.test.mixin.support.*
-import org.junit.*
 import static grails.test.MockUtils.*
 
 @TestFor(MyService)
@@ -32,12 +30,4 @@ class FirstTests {
 		assertEquals listResult, listToSort			
 	}
 	
-	void testGetJohnSmith_whenCallTheServiceAndMockTheDomain_shouldReturnAPersonJohnSmith() {
-		Person rambo = new Person(firstName:'John', lastName:'Rambo')
-		Person smith = new Person(firstName:'John', lastName:'Smith')
-		
-		mockDomain(Person,[rambo, smith])
-		
-		assertEquals smith, service.getJohnSmith()
-	}
 }
