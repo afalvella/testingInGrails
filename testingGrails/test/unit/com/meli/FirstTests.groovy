@@ -4,7 +4,8 @@ import static org.junit.Assert.*
 import grails.test.GrailsMock
 import grails.test.mixin.support.*
 import static grails.test.MockUtils.*
-import grails.test.mixin.support.GrailsUnitTestMixin;
+import grails.test.mixin.support.GrailsUnitTestMixin
+
 
 @TestFor(MyService)
 @Mock(Person)

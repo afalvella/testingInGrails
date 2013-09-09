@@ -2,7 +2,7 @@ package com.meli
 
 import static org.junit.Assert.*
 import grails.test.mixin.support.*
-
+import static grails.test.MockUtils.*
 
 @TestFor(MyService)
 @Mock([Person])
@@ -20,5 +20,13 @@ class ServiceAndDomainWithAnnotationTests {
         assert lastNameOfBillGates == Person.findByFirstName('Bill').getLastName()
     }
 	
-	//TODO a test with save
+	
+//	void "test persistPerson _ when call save a domain _ should save the domain object"() {
+//		mockLogging(MyService)
+//		
+//		service.persistAPerson('Steve', 'Jobs')
+//		def list = Person.list()
+//		assert 'Steve' == Person.findByLastName('Jobs').firstName
+//	}
+	
 }

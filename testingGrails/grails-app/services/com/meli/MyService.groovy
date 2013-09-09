@@ -20,4 +20,12 @@ class MyService {
 		collaborator.doYourMagic()
 		return collaborator.anotherImportantMethod()
 	}
+	
+	def persistAPerson(String firstName, String lastName) {
+		log.info "Persisting $firstName $lastName"
+		
+		def newPerson = new Person(firstName:'Steve', lastName:'Jobs')
+		newPerson.save(flush:true)
+		
+	}
 }

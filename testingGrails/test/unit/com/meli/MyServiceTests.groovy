@@ -1,6 +1,7 @@
 package com.meli
 
-import grails.test.mixin.support.GrailsUnitTestMixin;
+import grails.test.mixin.support.GrailsUnitTestMixin
+
 
 @TestFor(MyService)
 class MyServiceTests {
@@ -50,5 +51,13 @@ class MyServiceTests {
 		
 		//In the verify I check the order and the cardinality
 		control.verify()
+	}
+	
+	void "test mocking a Collaborator with AS operator _ when call the Collaborator mocked by hand _ should works properly"() {
+		def expectedValue = 'Im mocked with AS operator'
+		def mockCollab = { -> return expectedValue } as CollaboratorService
+		service.collaborator = mockCollab
+		
+		assert expectedValue == service.doComplexTask()
 	}
 }
