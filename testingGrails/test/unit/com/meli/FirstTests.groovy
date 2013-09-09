@@ -4,6 +4,8 @@ import static org.junit.Assert.*
 import grails.test.GrailsMock
 import grails.test.mixin.support.*
 import static grails.test.MockUtils.*
+import grails.test.mixin.support.GrailsUnitTestMixin;
+
 
 @TestFor(MyService)
 @Mock(Person)
@@ -29,5 +31,14 @@ class FirstTests {
 		Collections.sort(listToSort)
 		assertEquals listResult, listToSort			
 	}
+	
+//	void testStubsUse() {
+//		String stubMsg = 'Im a stub'
+//		def stub = stubFor(CollaboratorService)
+//		stub.demand.doYourMagic() { -> return stubMsg }
+//		service.collaborator = stub.createStub()
+//		
+//		assertEquals(stubMsg, service.doComplexTask())	
+//	}
 	
 }
