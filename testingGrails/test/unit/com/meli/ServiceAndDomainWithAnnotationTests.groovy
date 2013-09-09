@@ -3,6 +3,7 @@ package com.meli
 import static org.junit.Assert.*
 import grails.test.mixin.support.*
 
+
 @TestFor(MyService)
 @Mock([Person])
 class ServiceAndDomainWithAnnotationTests {
@@ -18,4 +19,6 @@ class ServiceAndDomainWithAnnotationTests {
 		def lastNameOfBillGates = 'Gates'  
         assert lastNameOfBillGates == Person.findByFirstName('Bill').getLastName()
     }
+	
+	//TODO a test with save
 }
