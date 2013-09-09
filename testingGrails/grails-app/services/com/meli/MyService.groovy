@@ -15,4 +15,9 @@ class MyService {
 	def getJohnSmith() {
 		Person.findByFirstNameAndLastName("John", "Smith")
 	}
+	
+	def callingTwoMethodsOfACollaborator() {
+		collaborator.doYourMagic()
+		return collaborator.anotherImportantMethod()
+	}
 }
