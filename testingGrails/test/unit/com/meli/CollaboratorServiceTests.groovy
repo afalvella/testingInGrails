@@ -1,17 +1,24 @@
 package com.meli
 
-
-
 import grails.test.mixin.*
 import org.junit.*
 
-/**
- * See the API for {@link grails.test.mixin.services.ServiceUnitTestMixin} for usage instructions
- */
 @TestFor(CollaboratorService)
 class CollaboratorServiceTests {
+	
+	CollaboratorService instance
+	
+	void setUp(){
+		instance = new CollaboratorService()
+	}
 
-    void testSomething() {
-        assert true
+    void "test methodWithTooManyBranches _ when param is zero _ should return zero as string "() {
+        String zeroAsString = 'zero'
+		assert zeroAsString == service.methodWithTooManyBranches(0)
     }
+	
+	void "test doYourMagic _ when is called _ should return a string "() {
+		String expectedValue = 'Im a service collaborator'
+		assert expectedValue == instance.doYourMagic()
+	}
 }

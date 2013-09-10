@@ -9,4 +9,16 @@ class CollaboratorService {
 	def anotherImportantMethod() {
 		return 'This code rocks'
 	}
+	
+	def methodWithTooManyBranches(Integer number) {
+		if(number < 0){
+			return 'negative'
+		}else{
+			if(number == 0){
+				return 'zero'	
+			}else{
+				return 'positive'
+			}
+		}
+	}
 }
