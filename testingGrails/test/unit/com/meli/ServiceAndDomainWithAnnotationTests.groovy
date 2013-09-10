@@ -21,12 +21,12 @@ class ServiceAndDomainWithAnnotationTests {
     }
 	
 	
-//	void "test persistPerson _ when call save a domain _ should save the domain object"() {
-//		mockLogging(MyService)
-//		
-//		service.persistAPerson('Steve', 'Jobs')
-//		def list = Person.list()
-//		assert 'Steve' == Person.findByLastName('Jobs').firstName
-//	}
+	void "test persistPerson _ when call save a domain _ should save the domain object"() {
+		mockLogging(MyService)
+		
+		service.persistAPerson('Steve', 'Jobs')
+		def list = Person.list()
+		assert 'Steve' == Person.findByLastName('Jobs').firstName
+	}
 	
 }

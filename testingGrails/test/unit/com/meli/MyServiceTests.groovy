@@ -2,7 +2,6 @@ package com.meli
 
 import grails.test.mixin.support.GrailsUnitTestMixin
 
-
 @TestFor(MyService)
 class MyServiceTests {
 
@@ -55,9 +54,14 @@ class MyServiceTests {
 	
 	void "test mocking a Collaborator with AS operator _ when call the Collaborator mocked by hand _ should works properly"() {
 		def expectedValue = 'Im mocked with AS operator'
-		def mockCollab = { -> return expectedValue } as CollaboratorService
+		def doYourMagicMock = { -> return expectedValue }
+		def anotherMethodMock = { -> return 'another response' }
+		
+		def helper = [anotherImportantMethod:anotherMethodMock, doYourMagic:doYourMagicMock]
+		def mockCollab = helper as CollaboratorService
 		service.collaborator = mockCollab
 		
 		assert expectedValue == service.doComplexTask()
+		assert 'another response' == mockCollab.anotherImportantMethod()
 	}
 }

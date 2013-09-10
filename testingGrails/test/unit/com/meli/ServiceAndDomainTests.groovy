@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 import grails.test.mixin.support.*;
 import static grails.test.MockUtils.*;
 
+
 @TestFor(MyService)
 class ServiceAndDomainTests {
 

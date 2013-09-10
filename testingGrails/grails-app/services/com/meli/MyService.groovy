@@ -21,11 +21,11 @@ class MyService {
 		return collaborator.anotherImportantMethod()
 	}
 	
-	def persistAPerson(String firstName, String lastName) {
+	def persistAPerson(String firstName, String lastName, Integer age=0 ) {
 		log.info "Persisting $firstName $lastName"
 		
-		def newPerson = new Person(firstName:'Steve', lastName:'Jobs')
-		newPerson.save(flush:true)
-		
+		Person newPerson = new Person(firstName:firstName, lastName:lastName, Age:age)
+		def id = newPerson.save(validate:false)
+		return id
 	}
 }
