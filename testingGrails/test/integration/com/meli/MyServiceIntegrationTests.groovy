@@ -22,8 +22,7 @@ class MyServiceIntegrationTests {
 
     @Test
     void "test doComplexTask"() {
-		//def expectedValue = 'Im a service collaborator'
-		//assert expectedValue == myService.doComplexTask()
-		assert true
+		def expectedValue = 'Im a service collaborator'
+		assert expectedValue == myService.doComplexTask()
     }
 }

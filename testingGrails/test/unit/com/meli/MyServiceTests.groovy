@@ -31,7 +31,7 @@ class MyServiceTests {
 		//Set its behavior
 		control.demand.doYourMagic(1..1) { -> return mockMsg }
 		//Set the instance in the class under test
-		service.collaborator = control.createMock()
+		service.collaboratorService = control.createMock()
 		
 		//Now I can test the class
 		assertEquals(mockMsg, service.doComplexTask())
@@ -48,7 +48,7 @@ class MyServiceTests {
 		control.demand.doYourMagic(1..1) { -> return mockMsg }
 		control.demand.anotherImportantMethod(1..1) { -> return anotherMsg }
 		
-		service.collaborator = control.createMock()
+		service.collaboratorService = control.createMock()
 
 		//Now I should call one time each method an in order 
 		assertEquals(anotherMsg, service.callingTwoMethodsOfACollaborator())
@@ -64,7 +64,7 @@ class MyServiceTests {
 		
 		def helper = [anotherImportantMethod:anotherMethodMock, doYourMagic:doYourMagicMock]
 		def mockCollab = helper as CollaboratorService
-		service.collaborator = mockCollab
+		service.collaboratorService = mockCollab
 		
 		assert expectedValue == service.doComplexTask()
 		assert 'another response' == mockCollab.anotherImportantMethod()

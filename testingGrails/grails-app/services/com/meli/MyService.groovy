@@ -2,7 +2,7 @@ package com.meli
 
 class MyService {
 
-	CollaboratorService collaborator
+	CollaboratorService collaboratorService
 	
     String numberToString(Integer intParam) {
 		intParam?.toString()
@@ -10,7 +10,7 @@ class MyService {
 	
 	def doComplexTask() {
 		log.info 'Do Complex Task'
-		collaborator.doYourMagic()
+		collaboratorService.doYourMagic()
 	}
 	
 	def getJohnSmith() {
@@ -18,8 +18,8 @@ class MyService {
 	}
 	
 	def callingTwoMethodsOfACollaborator() {
-		collaborator.doYourMagic()
-		return collaborator.anotherImportantMethod()
+		collaboratorService.doYourMagic()
+		return collaboratorService.anotherImportantMethod()
 	}
 	
 	def persistAPerson(String firstName, String lastName) {

@@ -5,15 +5,15 @@ import spock.lang.Specification;
 
 class CollaboratorSpec extends Specification {
 
-	CollaboratorService collaborator
+	CollaboratorService collaboratorService
 	
 	void setup() {
-		collaborator = new CollaboratorService()
+		collaboratorService = new CollaboratorService()
     }
 
     void "test do your magic" () {
         when: "call the method doYourMagic"
-		def value = collaborator.doYourMagic()
+		def value = collaboratorService.doYourMagic()
 		
 		then: "the value must be 'Im a service collaborator'"
 		def expectedValue = 'Im a service collaborator'
@@ -22,6 +22,6 @@ class CollaboratorSpec extends Specification {
 	
 	void "test anotherMethod" () {
 		expect:
-		'This code rocks' == collaborator.anotherImportantMethod()
+		'This code rocks' == collaboratorService.anotherImportantMethod()
 	}
 }

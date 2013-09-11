@@ -21,7 +21,7 @@ class FirstTests {
 		def mockMsg = 'Im a mock created with GrailsMock'
 		def mockControl = new GrailsMock(CollaboratorService)
 		mockControl.demand.doYourMagic() { -> return mockMsg }
-		service.collaborator = mockControl.createMock()
+		service.collaboratorService = mockControl.createMock()
 		
 		assertEquals(mockMsg, service.doComplexTask())	
 	}

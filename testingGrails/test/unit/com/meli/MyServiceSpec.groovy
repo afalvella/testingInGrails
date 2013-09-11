@@ -18,4 +18,6 @@ class MyServiceSpec extends Specification{
 		"finding John Smith" == myService.getJohnSmith()
 		Person.count() == 4000
 	}
+	
+	
 }
