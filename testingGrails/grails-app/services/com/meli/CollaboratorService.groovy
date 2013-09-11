@@ -3,6 +3,7 @@ package com.meli
 class CollaboratorService {
 
     def doYourMagic() {
+		log.info 'Do Your Magic'
 		return 'Im a service collaborator'
     }
 	

@@ -9,6 +9,7 @@ class MyService {
     }
 	
 	def doComplexTask() {
+		log.info 'Do Complex Task'
 		collaborator.doYourMagic()
 	}
 	
@@ -21,11 +22,11 @@ class MyService {
 		return collaborator.anotherImportantMethod()
 	}
 	
-	def persistAPerson(String firstName, String lastName, Integer age=0 ) {
+	def persistAPerson(String firstName, String lastName) {
 		log.info "Persisting $firstName $lastName"
 		
-		Person newPerson = new Person(firstName:firstName, lastName:lastName, Age:age)
-		def id = newPerson.save(validate:false)
+		Person newPerson = new Person(firstName:firstName, lastName:lastName)
+		def id = newPerson.save()
 		return id
 	}
 }

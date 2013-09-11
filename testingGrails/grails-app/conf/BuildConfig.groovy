@@ -63,3 +63,20 @@ grails.project.dependency.resolution = {
 		test ":code-coverage:1.2.6"
     }
 }
+
+coverage {
+	exclusions = [
+		"**/*BootStrap*",
+		"Config*",
+		"**/conf/**",
+		"**/*DataSource*",
+		"**/*resources*",
+		"**/*UrlMappings*",
+		"**/*Tests*",
+		"**/grails/test/**",
+		"**/org/codehaus/groovy/grails/**",
+		"**/PreInit*",
+		"*GrailsPlugin*",
+		"ApplicationResources*"
+	]
+}

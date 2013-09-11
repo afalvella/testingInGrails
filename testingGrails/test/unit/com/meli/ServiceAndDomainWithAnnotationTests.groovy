@@ -12,7 +12,7 @@ class ServiceAndDomainWithAnnotationTests {
         def persons = []
 		persons << new Person(firstName:'Linus', lastName:'Torvalds') 
 		persons << new Person(firstName:'Bill', lastName:'Gates')
-		persons*.save(validate:false)
+		persons*.save()
     }
 
     void "test Mock Annotation _ when call a dynamic finder _ should return the domain object"() {

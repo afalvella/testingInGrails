@@ -4,7 +4,7 @@ import grails.test.mixin.support.GrailsUnitTestMixin
 
 @TestFor(MyService)
 class MyServiceTests {
-
+	
 	void setUp() {
 		//The testFor annotation give me a reference to the service called "service" so it's not necessary to instantiate it.
 		//myService = new MyService()
@@ -52,7 +52,7 @@ class MyServiceTests {
 		control.verify()
 	}
 	
-	void "test mocking a Collaborator with AS operator _ when call the Collaborator mocked by hand _ should works properly"() {
+	void "test mocking with AS operator _ when call the Collaborator _ should return expectedValue"() {
 		def expectedValue = 'Im mocked with AS operator'
 		def doYourMagicMock = { -> return expectedValue }
 		def anotherMethodMock = { -> return 'another response' }
