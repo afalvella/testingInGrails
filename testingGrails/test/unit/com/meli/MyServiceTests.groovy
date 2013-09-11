@@ -2,6 +2,7 @@ package com.meli
 
 import grails.test.mixin.support.GrailsUnitTestMixin
 
+
 @TestFor(MyService)
 class MyServiceTests {
 	
@@ -13,6 +14,10 @@ class MyServiceTests {
     void testNumberToString_whenZero_shouldReturnTheCorrectValue() {
         assert service.numberToString(0) == '0' 
     }
+	
+	void testNumberToString_whenNull_shouldReturnTheCorrectValue() {
+		assert service.numberToString(null) == null
+	}
 	
 	void testNumberToString_whenNull_shouldReturnNull(){
 		assertEquals(null, service.numberToString(null))
