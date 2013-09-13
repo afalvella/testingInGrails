@@ -26,6 +26,4 @@ class ServiceAndDomainTests {
 		assert result.getLastName() == 'Rambo'
 	}
 	
-	
-	
 }

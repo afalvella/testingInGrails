@@ -9,18 +9,7 @@ class MyServiceIntegrationTests {
 	
 	MyService myService
 	
-	@Before
-    void setUp() {
-        mockLogging(MyService)
-		mockLogging(CollaboratorService)
-    }
-
-    @After
-    void tearDown() {
-        // Tear down logic here
-    }
-
-    @Test
+	@Test
     void "test doComplexTask"() {
 		def expectedValue = 'Im a service collaborator'
 		assert expectedValue == myService.doComplexTask()
