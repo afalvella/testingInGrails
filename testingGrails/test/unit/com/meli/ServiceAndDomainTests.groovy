@@ -1,8 +1,8 @@
 package com.meli
 
-import static org.junit.Assert.*;
-import grails.test.mixin.support.*;
-import static grails.test.MockUtils.*;
+import static grails.test.MockUtils.*
+import static org.junit.Assert.*
+import grails.test.mixin.support.*
 
 
 @TestFor(MyService)

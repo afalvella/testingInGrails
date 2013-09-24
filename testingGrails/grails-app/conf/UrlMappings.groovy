@@ -9,5 +9,10 @@ class UrlMappings {
 
 		"/"(view:"/index")
 		"500"(view:'/error')
+		
+		"/example/people"(controller:'Person', parseRequest:true) {
+			action = [GET:'getPersonList']
+		}
+		
 	}
 }

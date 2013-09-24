@@ -7,7 +7,6 @@ import static grails.test.MockUtils.*
 import grails.test.mixin.support.GrailsUnitTestMixin
 
 
-
 @TestFor(MyService)
 @Mock(Person)
 class FirstTests {
@@ -24,13 +23,6 @@ class FirstTests {
 		service.collaboratorService = mockControl.createMock()
 		
 		assertEquals(mockMsg, service.doComplexTask())	
-	}
-		
-	void testUsingStaticMethods_whenCallCollectionsSort_shouldReturnWhatWeMocked() {
-		List listResult = ['a','b','c']
-		List listToSort = ['b','c','a']
-		Collections.sort(listToSort)
-		assertEquals listResult, listToSort			
 	}
 		
 }

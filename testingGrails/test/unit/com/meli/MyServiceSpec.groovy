@@ -31,4 +31,20 @@ class MyServiceSpec extends Specification{
 		then:
 		1 * mockCollaborator.doYourMagic()
 	}
+	
+	def "test getParity _ when using stubs and mocks _ should return the expected value"() {
+		given:
+		def stubCalculator = Stub(CalculatorService)
+		stubCalculator.getParity(_) >> { throw new Exception() } 
+		def mockCollaborator = Mock(CollaboratorService)
+		
+		myService.calculatorService = stubCalculator
+		myService.collaboratorService = mockCollaborator
+		
+		when:
+		myService.getParity(10) 
+		
+		then:
+		1 * mockCollaborator.handleException()
+	}
 }

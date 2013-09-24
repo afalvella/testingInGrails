@@ -2,7 +2,6 @@ package com.meli
 
 import grails.test.mixin.*
 import org.junit.*
-
 import spock.lang.Specification;
 
 class PersonSpec extends Specification {

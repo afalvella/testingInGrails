@@ -2,7 +2,6 @@ package com.meli
 
 import grails.test.mixin.support.GrailsUnitTestMixin
 
-
 @TestFor(MyService)
 class MyServiceTests {
 	

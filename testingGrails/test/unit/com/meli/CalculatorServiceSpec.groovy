@@ -22,6 +22,6 @@ class CalculatorServiceSpec extends Specification {
 		0		|	'Even'
 		1		|	'Odd'
 		2		|	'Even'
-		
+		3		|	'Odd'
 	}
 }

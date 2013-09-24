@@ -2,7 +2,8 @@ package com.meli
 
 class MyService {
 
-	CollaboratorService collaboratorService
+	def collaboratorService
+	def calculatorService
 	
     String numberToString(Integer intParam) {
 		intParam?.toString()
@@ -28,5 +29,13 @@ class MyService {
 		Person newPerson = new Person(firstName:firstName, lastName:lastName)
 		def id = newPerson.save()
 		return id
+	}
+	
+	def getParity(Integer number) {
+		try{
+			calculatorService.getParity(number)
+		}catch(Exception e){
+			collaboratorService.handleException()
+		}	
 	}
 }

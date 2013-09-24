@@ -22,4 +22,8 @@ class CollaboratorService {
 			}
 		}
 	}
+	
+	def handleException() {
+		return 'handling exception'
+	}
 }
