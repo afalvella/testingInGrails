@@ -3,7 +3,6 @@ package com.meli
 import grails.test.mixin.*
 import org.junit.*
 
-
 @TestFor(CollaboratorService)
 class CollaboratorServiceTests {
 	
@@ -18,7 +17,7 @@ class CollaboratorServiceTests {
 		assert zeroAsString == instance.methodWithTooManyBranches(0)
     }
 	
-	void "test doYourMagic _ when is called _ should return a string "() {
+	void "test doYourMagic _ when the service is called _ should return a string "() {
 		String expectedValue = 'Im a service collaborator'
 		assert expectedValue == instance.doYourMagic()
 	}

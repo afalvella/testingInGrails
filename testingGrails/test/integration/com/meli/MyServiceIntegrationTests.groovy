@@ -4,7 +4,6 @@ import static org.junit.Assert.*
 import org.junit.*
 import static grails.test.MockUtils.*
 
-
 class MyServiceIntegrationTests {
 	
 	MyService myService

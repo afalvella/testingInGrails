@@ -13,11 +13,11 @@ class CollaboratorSpec extends Specification {
 
     void "test do your magic" () {
         when: "call the method doYourMagic"
-		def value = collaboratorService.doYourMagic()
+		def resultValueFromService = collaboratorService.doYourMagic()
 		
 		then: "the value must be 'Im a service collaborator'"
 		def expectedValue = 'Im a service collaborator'
-		expectedValue == value
+		expectedValue == resultValueFromService
     }
 	
 	void "test anotherMethod" () {

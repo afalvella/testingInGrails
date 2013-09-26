@@ -16,7 +16,7 @@ class ServiceAndDomainWithAnnotationTests {
 		persons*.save()
     }
 
-    void "test Mock Annotation _ when call a dynamic finder _ should return the domain object"() {
+    void "test Mock Annotation _ when call a dynamic finder _ should return the mocked domain object"() {
 		def lastNameOfBillGates = 'Gates'  
         assert lastNameOfBillGates == Person.findByFirstName('Bill').getLastName()
     }

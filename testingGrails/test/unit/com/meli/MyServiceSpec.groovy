@@ -14,13 +14,13 @@ class MyServiceSpec extends Specification{
 		Person.findByFirstNameAndLastName("John", "Smith") >> "finding John Smith"
 	}
 	
-	def "test getJohnSmith _ when mocking static methods in the domain class _ should return what i've mocked"() {
+	def "test getJohnSmith _ when mocking static methods in the domain class _ should return the mocked count"() {
 		expect:
 		"finding John Smith" == myService.getJohnSmith()
 		Person.count() == 4000
 	}
 	
-	def "test doComplexTask _ when mocking the collaborator _ should return what i've mocked" () {
+	def "test doComplexTask _ when mocking a collaborator _ should verify the call to the mocked method" () {
 		given: "a mock of the CollaboratorService"
 		def mockCollaborator = Mock(CollaboratorService)
 		myService.collaboratorService = mockCollaborator
@@ -32,7 +32,7 @@ class MyServiceSpec extends Specification{
 		1 * mockCollaborator.doYourMagic()
 	}
 	
-	def "test getParity _ when using stubs and mocks _ should return the expected value"() {
+	def "test getParity _ when using stubs and mocks to throwing a Exception _ should verify the call to the method handleException"() {
 		given:
 		def stubCalculator = Stub(CalculatorService)
 		stubCalculator.getParity(_) >> { throw new Exception() } 

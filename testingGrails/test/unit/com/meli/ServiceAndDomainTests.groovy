@@ -17,11 +17,11 @@ class ServiceAndDomainTests {
 		mockDomain(Person,[rambo, smith])
 	}
 
-    void "test getJohnSmith _ when calling MyService _ should return a domain object"() {
+    void "test getJohnSmith _ when calling MyService _ should return the correct mocked domain"() {
         assert smith == service.getJohnSmith()
     }
 	
-	void "test getting a Domain Class _ when using dynamic finders _ should return the right domain object"() {
+	void "test getting a Domain Class _ when using dynamic finders _ should return the correct mocked domain" () {
 		Person result = Person.findByLastName('Rambo')
 		assert result.getLastName() == 'Rambo'
 	}

@@ -7,7 +7,7 @@ class MyServiceTests {
 	
 	void setUp() {
 		//The testFor annotation give me a reference to the service called "service" so it's not necessary to instantiate it.
-		//myService = new MyService()
+		//myService = new MyService()  --> this is not necessary
     }
 	
     void testNumberToString_whenZero_shouldReturnTheCorrectValue() {
@@ -39,7 +39,7 @@ class MyServiceTests {
 		control.verify()	 
 	}
 	
-	void "test the order of invocation _ when call a Collaborator _ should respect the order"() {
+	void "test the order of invocation _ when call a Collaborator _ should respect the order of the called methods"() {
 		String mockMsg = 'Im a mock collaborator'
 		String anotherMsg = 'This code rules'
 		
@@ -56,7 +56,7 @@ class MyServiceTests {
 		control.verify()
 	}
 	
-	void "test mocking with AS operator _ when call the Collaborator _ should return expectedValue"() {
+	void "test mocking with AS operator _ when call the Collaborator _ should behave like the logic in the closures"() {
 		def expectedValue = 'Im mocked with AS operator'
 		def doYourMagicMock = { -> return expectedValue }
 		def anotherMethodMock = { -> return 'another response' }

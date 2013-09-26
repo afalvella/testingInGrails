@@ -16,7 +16,7 @@ class FirstTests {
         assertEquals('123', service.numberToString(123)) 
     }
 	
-	void testDoComplexTask_whenMockingCollaborator_shouldReturnWhatIMock() {
+	void "test doComplexTask _ when mocking a Collaborator _ should return a mock message"() {
 		def mockMsg = 'Im a mock created with GrailsMock'
 		def mockControl = new GrailsMock(CollaboratorService)
 		mockControl.demand.doYourMagic() { -> return mockMsg }
