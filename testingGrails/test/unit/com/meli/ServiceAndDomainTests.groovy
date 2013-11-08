@@ -2,7 +2,7 @@ package com.meli
 
 import static grails.test.MockUtils.*
 import static org.junit.Assert.*
-import grails.test.mixin.support.*
+import grails.test.mixin.TestFor
 
 
 @TestFor(MyService)

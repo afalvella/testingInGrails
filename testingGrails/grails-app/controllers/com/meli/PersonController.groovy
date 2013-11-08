@@ -8,5 +8,6 @@ class PersonController {
 		render(contentType:"text/json") {
 			personService.getPersonList()
 		}
+		response.status = 200
 	}
 }

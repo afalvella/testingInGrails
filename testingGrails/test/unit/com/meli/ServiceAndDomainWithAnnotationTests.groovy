@@ -1,9 +1,9 @@
 package com.meli
 
 import static org.junit.Assert.*
-import grails.test.mixin.support.*
 import static grails.test.MockUtils.*
-
+import grails.test.mixin.TestFor
+import grails.test.mixin.Mock
 
 @TestFor(MyService)
 @Mock([Person])

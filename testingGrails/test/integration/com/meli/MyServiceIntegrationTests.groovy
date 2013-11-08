@@ -13,4 +13,5 @@ class MyServiceIntegrationTests {
 		def expectedValue = 'Im a service collaborator'
 		assert expectedValue == myService.doComplexTask()
     }
+	
 }
